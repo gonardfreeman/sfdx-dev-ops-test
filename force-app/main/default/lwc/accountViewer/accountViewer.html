@@ -1,1 +1,18 @@
-<template> </template>
+<template>
+	<lightning-card variant="Narrow" title="Accounts" icon-name="standard:account">
+		<lightning-button-icon
+			icon-name="utility:down"
+			variant="border-filled"
+			alternative-text="Show More"
+			slot="actions"
+		></lightning-button-icon>
+		<div class="slds-p-horizontal_small">
+			<ul>
+				<template for:each={accountsToShow} for:item="acc">
+					<li key={acc.Id}>{acc.Name} / {acc.Test__c}</li>
+				</template>
+			</ul>
+		</div>
+		<p slot="footer">Card Footer</p>
+	</lightning-card>
+</template>
